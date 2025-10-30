@@ -34,7 +34,7 @@ class Kuyruk {
     private int arka;
     private int elemanSayisi;
 
-    // Constructor(Yapıcı) Metod (Class ismiyle aynı olduğuna dikkat edin
+    // Constructor(Yapıcı) Metod (Class ismiyle aynı olduğuna dikkat edin)
     public Kuyruk() {
         on = arka = elemanSayisi = 0;
     }
