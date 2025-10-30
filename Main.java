@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        Kuyruk k = new Kuyruk(); // Kuyruk nesnesi oluştur
+        Kuyruk k = new Kuyruk(); // Yeni kuyruk nesnesi oluşturuyoruz
 
         if (k.bosmu()) {
             System.out.println("Kuyruk boş!");
@@ -34,7 +34,7 @@ class Kuyruk {
     private int arka;
     private int elemanSayisi;
 
-    // Kurucu metot
+    // Constructor(Yapıcı) Metod (Class ismiyle aynı olduğuna dikkat edin
     public Kuyruk() {
         on = arka = elemanSayisi = 0;
     }
@@ -55,7 +55,7 @@ class Kuyruk {
 
         K[arka] = yeni;
         arka++;
-        if (arka == N) arka = 0; // Dairesel kaydırma
+        if (arka == N) arka = 0; // Çevrimsel Kuyruk.(Arka göstericisi son elemana geldiğinde en başa dönüp 0.index'i gösterecek ve oraya eleman ekleyecek.)
         elemanSayisi++;
     }
 
@@ -67,8 +67,9 @@ class Kuyruk {
 
         int veri = K[on];
         on++;
-        if (on == N) on = 0;
+        if (on == N) on = 0;  
         elemanSayisi--;
-        return veri;
+        return veri;  // Burada eğer return'den sonra on++ deseydik on işaretçisinin index'i artmayacak dolayısıyla bir sonraki elemanı göstermeyecektir. 
+                      // çünkü derleyici return'ü gördüğü anda programdan çıkar ve return'den sonra gelen hiçbir işlemi yapmaz. O yüzden buraya dikkat edilmesi gerekir!!!
     }
 }
